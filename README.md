@@ -4,8 +4,8 @@ Root CA and Intermediate CA generation using OpenSSL.
 ## Create directories and conifugrations
 ```bash
 cd /etc/ssl/
-mkdir ssl_certs
-mkdir config rootCA intermCA server_cert cert_chain
+mkdir -p ssl_certs
+mkdir -p config rootCA intermCA server_cert cert_chain
 cd /etc/ssl/ssl_certs/config
 ```
 Pull the repository inside the `config` directory and open the files `csr.cnf`, `intermCA.cnf` and `rootCA.cnf` and change the `DOMAIN_NAME` to your desired domain.
@@ -17,7 +17,7 @@ Create directories `newcerts`, `certs`, `crl`, `private` and `requests` inside t
 
 ```bash
 cd /etc/ssl/ssl_certs/rootCA
-mkdir newcerts certs crl private requests
+mkdir -p newcerts certs crl private requests
 touch index.txt
 touch index.txt.attr
 echo '1000' > serial
@@ -42,7 +42,7 @@ Create directories `newcerts`, `certs`, `crl`, `csr` and `private` inside the `i
 
 ```bash
 cd /etc/ssl/ssl_certs/intermCA
-mkdir newcerts certs crl csr private
+mkdir -p newcerts certs crl csr private
 touch index.txt
 touch index.txt.attr
 echo 1000 > crlnumber
