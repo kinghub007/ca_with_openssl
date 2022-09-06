@@ -8,7 +8,7 @@ mkdir -p ssl_certs
 mkdir -p config rootCA intermCA server_cert cert_chain
 cd /etc/ssl/ssl_certs/config
 ```
-Pull the repository inside the `config` directory and open the files `csr.cnf`, `intermCA.cnf` and `rootCA.cnf` and change the `DOMAIN_NAME` to your desired domain.
+Pull the repository inside the `config` directory and open the files `intermCA.cnf` and `rootCA.cnf` and change the `DOMAIN_NAME` to your desired domain.
 
 ## Root CA generation
 
@@ -74,14 +74,16 @@ cat intermCA/certs/int.DOMAINNAME.crt.pem root/certs/ca.DOMAINNAME.crt.pem > cer
 
 ## Creating server certificates
 
-### Step 1: Creating the private key and CSR
+### Step 1: Open `/etc/ssl/ssl_certs/config/csr.cnf` and set FQDN[1-3] to your desired domain and save it
+
+### Step 2: Creating the private key and CSR
 
 ```bash
 cd /etc/ssl/ssl_certs/server_cert
 openssl req -out /etc/ssl/ssl_certs/server_cert/csr/FQDN.csr.pem -newkey rsa:2048 -nodes -keyout /etc/ssl/ssl_certs/server_cert/private/FQDN.key.pem -config /etc/ssl/ssl_certs/config/csr.cnf
 ```
 
-### Step 2: Creating the server certificate by signing the CSR with the Intermediate CA
+### Step 3: Creating the server certificate by signing the CSR with the Intermediate CA
 
 ```bash
 openssl ca -config /etc/ssl/ssl_certs/config/intermCA.cnf -extensions server_cert -days 3750 -notext -md sha512 -in /etc/ssl/ssl_certs/server_cert/csr/FQDN.csr.pem -out /etc/ssl/ssl_certs/server_cert/certs/FQDN.crt.pem
