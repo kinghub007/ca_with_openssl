@@ -68,7 +68,7 @@ openssl ca -config /etc/ssl/ssl_certs/config/rootCA.cnf -extensions v3_intermedi
 
 ```bash
 cd /etc/ssl/ssl_certs/
-cat intermCA/certs/int.DOMAINNAME.crt.pem root/certs/ca.DOMAINNAME.crt.pem > cert_chain/chain.DOMAINNAME.crt.pem
+cat intermCA/certs/int.DOMAINNAME.crt.pem rootCA/certs/ca.DOMAINNAME.crt.pem > cert_chain/chain.DOMAINNAME.crt.pem
 ```
 
 
