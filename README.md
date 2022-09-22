@@ -54,7 +54,7 @@ echo '1234' > serial
 
 ```bash
 cd /etc/ssl/ssl_certs/intermCA
-openssl req -config /etc/ssl/ssl_certs/config/intermeCA.cnf -new -newkey rsa:4096 -keyout /etc/ssl/ssl_certs/intermCA/private/int.DOMAINNAME.key.pem -out /etc/ssl/ssl_certs/intermCA/csr/int.DOMAINNAME.csr
+openssl req -config /etc/ssl/ssl_certs/config/intermCA.cnf -new -newkey rsa:4096 -keyout /etc/ssl/ssl_certs/intermCA/private/int.DOMAINNAME.key.pem -out /etc/ssl/ssl_certs/intermCA/csr/int.DOMAINNAME.csr
 ```
 
 ### Step 3: Generating the Intermediate CA
