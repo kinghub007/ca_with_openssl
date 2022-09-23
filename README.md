@@ -80,6 +80,7 @@ cat intermCA/certs/int.DOMAINNAME.crt.pem rootCA/certs/ca.DOMAINNAME.crt.pem > c
 
 ```bash
 cd /etc/ssl/ssl_certs/server_cert
+mkdir -p certs csr private
 openssl req -out /etc/ssl/ssl_certs/server_cert/csr/FQDN.csr.pem -newkey rsa:2048 -nodes -keyout /etc/ssl/ssl_certs/server_cert/private/FQDN.key.pem -config /etc/ssl/ssl_certs/config/csr.cnf
 ```
 
