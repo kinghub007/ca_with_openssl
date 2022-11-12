@@ -1,7 +1,7 @@
 # Root CA, Intermediate CA and Server Certificate using OpenSSL
 Root CA, Intermediate CA, Server Certificate Generation Using OpenSSL.
 
-Pull the repository directory and open the files `intermCA.cnf` and `rootCA.cnf` and change the `DOMAIN_NAME` to your desired domain.
+Pull the repository directory and open the files `intermCA.cnf` and `rootCA.cnf` and change the `DOMAIN_NAME` to your desired domain. Open `/etc/ssl/ssl_certs/config/csr.cnf` and set FQDN[1-3] to your desired domain and save it. 
 
 ## Create directories and move to `/etc/ssl/`
 ```bash
@@ -28,7 +28,7 @@ Enter the domain name when asked ad wait for certificate generation to be comple
 
 ## Creating Server Certificate
 
-Open `/etc/ssl/ssl_certs/config/csr.cnf` and set FQDN[1-3] to your desired domain and save it. Creating the Private Key and CSR and Creating the Server Certificate by signing the CSR with the Intermediate CA
+Creating the Private Key and CSR and Creating the Server Certificate by signing the CSR with the Intermediate CA
 
 ```bash
 sh serverCert_generator.sh
