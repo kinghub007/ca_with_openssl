@@ -8,8 +8,22 @@ mkdir -p /etc/ssl/ssl_certs/intermCA/private/
 
 touch /etc/ssl/ssl_certs/intermCA/index.txt
 touch /etc/ssl/ssl_certs/intermCA/index.txt.attr
-echo '1000' > /etc/ssl/ssl_certs/intermCA/crlnumber
+
+echo '1001' > /etc/ssl/ssl_certs/intermCA/crlnumber
+file1=/etc/ssl/ssl_certs/intermCA/crlnumber
+while IFS= read -r num1
+do
+	num=$(( $num1 + 1 ))
+	echo $num > /etc/ssl/ssl_certs/intermCA/crlnumber
+done < "$file1"
+
 echo '1234' > /etc/ssl/ssl_certs/intermCA/serial
+file2=/etc/ssl/ssl_certs/intermCA/serial
+while IFS= read -r num2
+do
+	num_1=$(( $num2 + 1 ))
+	echo $num_1 > /etc/ssl/ssl_certs/intermCA/serial
+done < "$file2"
 
 ##  Generating the private key and certificate signing request (CSR) for the Intermediate CA
 read -p "Enter the domain name: " DOMAIN_NAME

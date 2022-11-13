@@ -1,7 +1,9 @@
 # Root CA, Intermediate CA and Server Certificate using OpenSSL
 Root CA, Intermediate CA, Server Certificate Generation Using OpenSSL.
 
-Pull the repository directory and open the files `intermCA.cnf` and `rootCA.cnf` and change the `DOMAIN_NAME` to your desired domain. Open `/etc/ssl/ssl_certs/config/csr.cnf` and set FQDN[1-3] to your desired domain and save it. 
+1. Become root using `sudo su -` before pulling the repository. 
+2. Pull the repository directory and open the files `intermCA.cnf` and `rootCA.cnf` and change the `DOMAIN_NAME` to your desired domain. 
+3. Open `csr.cnf` and set FQDN[1-3] to your desired full-qualified domain and save it. 
 
 ## Create directories and move to `/etc/ssl/`
 ```bash
