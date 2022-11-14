@@ -27,7 +27,7 @@ sh intermCA_generator.sh
 ```
 
 Enter the domain name when asked ad wait for certificate generation to be completed. 
-When a new Intermediate CA is needed please check `unique_subject` value in your `/etc/ssl/ssl_certs/intermCA/index.txt.attr` file, if it is set to `yes`, then set it to `no` to regenerate the Intermediate CA using the script `intermCA_generator.sh`.
+** When a new Intermediate CA is needed please check `unique_subject` value in your `/etc/ssl/ssl_certs/intermCA/index.txt.attr` file, if it is set to `yes`, then set it to `no` to regenerate the Intermediate CA using the script `intermCA_generator.sh`.
 
 ## Creating Server Certificate
 
